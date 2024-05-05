@@ -8,8 +8,18 @@ from .models import Item
 def index(request):
     items = Item.objects.all()
 
-    return HttpResponse(items)
+    return render(
+        request,
+        'index.html',
+        {
+            'items': items,
+        }
+    )
 
 
-def item(request):
-    return HttpResponse("Hello, world. You're at the food item page.")
+def detail(request, id):
+    item = Item.objects.get(pk=id)
+
+    return render(request, 'detail.html', {
+        'item': item,
+    })
