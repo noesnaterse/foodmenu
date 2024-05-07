@@ -1,6 +1,27 @@
 {% extends 'base.html' %}
 
     {% block body %}
+        {% for item in items %}
+            <div class="row">
+                <div class="col-md-3 offset-md-2">
+                    <img class="card" width="500px" src="{{ item.image }}"/>
+                </div>
+                <div class="col-md-4">
+                    <h3>{{ item.name }}</h3>
+                    <h5>{{ item.description }}</h5>
+                    <h6>$ {{ teim.price }}</h6>
+                </div>
+                <div class="col-md-2">
+                    <a class="btn btn-success" href="{% url 'food:detail' item.id %}">Details
+
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+
+
+        <hr />
+
     <h1>This is the item list</h1>
     <ul>
         {% for item in items %}

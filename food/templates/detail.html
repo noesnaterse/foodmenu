@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h2>{{ item.name }}</h2>
-<p>
-    {{ item.description }}
-</p>
-<p>
-    Now on sale for just <strong>{{ item.price }}</strong>
-</p>
+<div class="container">
+
+</div>
+    <div class="row">
+        <div class="col-md-6">
+            <img class="card" width="500px" src="{{ item.image }}"/>
+        </div>
+        <div class="col-md-6">
+            <h2>{{ item.name }}</h2>
+            <p>
+                {{ item.description }}
+            </p>
+            <p>
+                Now on sale for just <strong>{{ item.price }}</strong>
+            </p>
+        </div>
+    </div>
 {% endblock %}
